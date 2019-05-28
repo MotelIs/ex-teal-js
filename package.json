@@ -1,9 +1,9 @@
 {
-  "name": "teal-js",
+  "name": "ex-teal-js",
   "version": "1.0.0",
   "description": "Supporting modules for ExTeal",
   "main": "index.js",
-  "repository": "https://github.com/motelis/teal-js",
+  "repository": "https://github.com/motelis/ex-teal-js",
   "author": "Scott Taylor",
   "license": "MIT",
   "dependencies": {
