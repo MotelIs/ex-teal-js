@@ -11,6 +11,10 @@ export const Deleteable = {
      * Delete the given resources.
      */
     deleteResources(resources, callback = null) {
+      if (this.viaManyToMany) {
+        return this.detachResources(resources, callback);
+      }
+
       return ExTeal.request({
         url: `api/${this.resourceName}`,
         method: "delete",
@@ -25,6 +29,22 @@ export const Deleteable = {
               this.deleteModalOpen = false;
               this.getResources();
             }
+      );
+    },
+
+    detachResources(resources, callback) {
+      return ExTeal.request({
+        url: `api/${this.viaResource}/${this.viaResourceId}/detach/${this.viaRelationship}`,
+        params: {
+          resources: mapResources(resources)
+        }
+      }).then(
+        callback
+          ? callback
+          : () => {
+            this.deleteModalOpen = false;
+            this.getResources();
+          }
       );
     },
 
