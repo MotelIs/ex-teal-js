@@ -35,6 +35,7 @@ export const Deleteable = {
     detachResources(resources, callback) {
       return ExTeal.request({
         url: `api/${this.viaResource}/${this.viaResourceId}/detach/${this.viaRelationship}`,
+        method: 'delete',
         params: {
           resources: mapResources(resources)
         }
