@@ -8,8 +8,8 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.4.5",
-    "form-backend-validation": "^2.3.6",
+    "form-backend-validation": "^2.3.8",
     "inflector-js": "^1.0.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.13"
   }
 }
